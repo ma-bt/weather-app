@@ -6,12 +6,13 @@ import Inputs from './components/Inputs';
 import TimeandLocation from './components/TimeandLocation';
 import TemperatureandDetails from './components/TemperatureandDetails';
 import Forecast from './components/Forecast';
-import getWeatherData from './services/weatherService';
+
+import getFormattedWeatherData from './services/weatherService';
 
 function App() {
 
   const fetchWeather = async () => {
-    const data = await getWeatherData( "weather", { q: "london"});
+    const data = await getFormattedWeatherData( { q: "london"});
     console.log(data);
   }
   fetchWeather();
